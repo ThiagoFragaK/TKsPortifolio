@@ -1,22 +1,5 @@
 <template>
-    <div class="row mb-1">
-        <div class="col d-flex justify-content-end align-items-start" style="height: 48px;">
-            <button 
-                class="btn btn-unstyled"
-                disabled
-                @click="changeLanguage"
-            >
-                <div class="row">
-                    <div class="col">
-                        <p class="language">{{ currentLanguage }}</p>
-                    </div>
-                    <div class="col">
-                        <Languages class="me-2" size="20" />
-                    </div>
-                </div>
-            </button>
-        </div>
-    </div>
+    <LanguagesBar />
   
     <div class="row">
         <div class="col">
@@ -29,7 +12,7 @@
                         active-class="active"
                         >Home</NuxtLink>
                     </li>
-                    <li class="nav-item mx-3">
+                    <!-- <li class="nav-item mx-3">
                         <NuxtLink 
                         to="/about-me" 
                         class="nav-link px-4 py-3 text-black" 
@@ -56,7 +39,7 @@
                         class="nav-link px-4 py-3 text-black" 
                         active-class="active"
                         >Contact me</NuxtLink>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
@@ -64,30 +47,11 @@
 </template>
 
 <script>
-    import { Languages } from 'lucide-vue-next';
+    import LanguagesBar from "@/components/LanguagesBar.vue";
     export default {
         components: {
-            Languages,
+            LanguagesBar,
         },
-        data() {
-            return {
-                setLanguage: 0,
-                languages: [
-                    "EN",
-                    "PT"
-                ],
-            }
-        },
-        methods: {
-            changeLanguage() {
-                this.setLanguage === 0 ? this.setLanguage = 1 : this.setLanguage = 0;
-            },
-        },
-        computed: {
-            currentLanguage() {
-                return this.languages[this.setLanguage];
-            }
-        }
     }
 </script>
 
@@ -97,14 +61,5 @@
         font-weight: 500;
         font-size: 1.1rem;
         font-weight: bold;
-    }
-    .language {
-        font-weight: bold;
-    }
-    .btn-unstyled:disabled {
-        border: none;
-        background: transparent;
-        box-shadow: none;
-        cursor: default;
-    }
+    }    
 </style>
