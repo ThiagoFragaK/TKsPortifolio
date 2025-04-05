@@ -2,7 +2,8 @@
     <div class="row mb-1">
         <div class="col d-flex justify-content-end align-items-start" style="height: 48px;">
             <button 
-                class="btn"
+                class="btn btn-unstyled"
+                disabled
                 @click="changeLanguage"
             >
                 <div class="row">
@@ -99,5 +100,11 @@
     }
     .language {
         font-weight: bold;
+    }
+    .btn-unstyled:disabled {
+        border: none;
+        background: transparent;
+        box-shadow: none;
+        cursor: default;
     }
 </style>
