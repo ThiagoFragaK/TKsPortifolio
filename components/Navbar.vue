@@ -19,13 +19,13 @@
                         active-class="active"
                         >About me</NuxtLink>
                     </li>
-                    <!-- <li class="nav-item mx-3">
+                    <li class="nav-item mx-3">
                         <NuxtLink 
                         to="/projects" 
                         class="nav-link px-4 py-3 text-black" 
                         active-class="active"
                         >Projects</NuxtLink>
-                    </li> -->
+                    </li>
                     <!-- <li class="nav-item mx-3">
                         <NuxtLink 
                         to="/blog" 
