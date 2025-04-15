@@ -1,6 +1,7 @@
 <template>
     <br />
-    <div class="row">
+    <LoadingComponent v-if="isLoading" />
+    <div v-else class="row">
         <div class="col" v-for="(project, index) in projects" :key="index">
             <div class="card bg-transparent border-dark mb-3" style="max-width: 20rem;">
                 <div class="card-body">
@@ -36,19 +37,24 @@
 </template>
 
 <script>
+    import LoadingComponent from '~/components/LoadingComponent.vue';
     import { ExternalLink, Github } from 'lucide-vue-next';
     export default {
         components: {
+            LoadingComponent,
             ExternalLink,
             Github,
         },
         data() {
             return {
+                isLoading: true,
                 projects: []
             }
         },
         async mounted() {
+            this.isLoading = true;
             this.projects = await $fetch('/api/projects')
+            this.isLoading = false;
         }
     }
 </script>
