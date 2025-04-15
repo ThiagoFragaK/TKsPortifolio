@@ -3,7 +3,7 @@
         <div class="text-center">
             <div class="row mb-4">
                 <h1 class="allura-title">Thiago Fraga</h1>
-                <p class="subtitle">Software Developer and Architect</p>
+                <p class="subtitle">{{ $t('subtitle') }}</p>
             </div>
             <br/>
             <div class="row mt-4">
@@ -58,7 +58,7 @@
             redirectToLinkedin() {
                 window.open(`${this.LinkedinUrl}`, '_blank');
             },
-        }
+        },
     }
 </script>
 
