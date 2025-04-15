@@ -3,12 +3,11 @@
         <div class="col d-flex justify-content-end align-items-start" style="height: 48px;">
             <button 
                 class="btn btn-unstyled"
-                disabled
                 @click="changeLanguage"
             >
                 <div class="row">
                     <div class="col">
-                        <p class="language">{{ currentLanguage }}</p>
+                        <p class="language">{{ currentLanguage.toUpperCase() }}</p>
                     </div>
                     <div class="col">
                         <Languages class="me-2" size="20" />
@@ -21,22 +20,25 @@
 
 <script>
     import { Languages } from 'lucide-vue-next';
+    import { useLanguageStore } from '@/stores/languagesStore';
     export default {
         components: {
             Languages,
         },
         data() {
             return {
+                languageStore: useLanguageStore(),
                 setLanguage: 0,
                 languages: [
-                    "EN",
-                    "PT"
+                    "en",
+                    "pt"
                 ],
             }
         },
         methods: {
             changeLanguage() {
                 this.setLanguage === 0 ? this.setLanguage = 1 : this.setLanguage = 0;
+                this.languageStore.switchLanguages(this.currentLanguage)                
             },
         },
         computed: {
@@ -56,5 +58,14 @@
         background: transparent;
         box-shadow: none;
         cursor: default;
+    }
+    .btn-unstyled {
+        border: none;
+        outline: none;    
+    }
+    .btn-unstyled:focus,
+    .btn-unstyled:active {
+        outline: none;
+        box-shadow: none;
     }
 </style>
