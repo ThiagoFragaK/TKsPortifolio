@@ -24,7 +24,7 @@ export default defineEventHandler(() => {
                 "en": "A clean and responsive portfolio built with Nuxt 3 and Bootstrap. It supports multiple languages and includes a few essential pages to showcase my work and background.",
                 "pt": "Um portfólio limpo e responsivo construído com Nuxt 3 e Bootstrap. Suporta múltiplos idiomas e inclui algumas páginas essenciais para apresentar meu trabalho e trajetória.",
             },
-            repository: "https://github.com/ThiagoFragaK/Nuxt-Clean-Architecture",
+            repository: "https://github.com/ThiagoFragaK/TKsPortifolio",
         },
     ]
 });
