@@ -29,13 +29,4 @@ export default defineNuxtConfig({
           ],
       },
   },
-
-  modules: ['@nuxtjs/i18n'],
-  i18n: {
-    defaultLocale: 'en',
-    locales: [
-      { code: 'en', name: 'English', file: 'en.json' },
-      { code: 'pt', name: 'Português', file: 'pt.json' }
-    ]
-  }
 })
