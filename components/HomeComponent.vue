@@ -3,7 +3,7 @@
         <div class="text-center">
             <div class="row mb-4">
                 <h1 class="allura-title">Thiago Fraga</h1>
-                <p class="subtitle">Software Developer and Architect</p>
+                <p class="subtitle">{{ subtitle }}</p>
             </div>
             <br/>
             <div class="row mt-4">
@@ -40,10 +40,13 @@
 
 
 <script>
+    import { Subtitle } from '@/locales/main-page';
+    import { useLanguageStore } from '@/stores/languagesStore';
     import { Instagram, Github, Linkedin } from 'lucide-vue-next';
     export default {
         name: "HomeComponent",
         data: () => ({
+            languages: useLanguageStore(),
             InstagramUrl: "https://www.instagram.com/thiagofragak/",
             GithubUrl: "https://github.com/ThiagoFragaK",
             LinkedinUrl: "https://www.linkedin.com/in/thiago-fraga-902729170/",
@@ -58,7 +61,12 @@
             redirectToLinkedin() {
                 window.open(`${this.LinkedinUrl}`, '_blank');
             },
-        }
+        },
+        computed: {
+            subtitle() {
+                return Subtitle[this.languages.getCurrentLanguage];
+            }
+        },
     }
 </script>
 
