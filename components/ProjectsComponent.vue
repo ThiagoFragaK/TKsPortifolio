@@ -1,15 +1,19 @@
 <template>
     <br />
     <LoadingComponent v-if="isLoading" />
-    <div v-else class="row">
-        <div class="col-3" v-for="(project, index) in projects" :key="index">
+    <div v-else class="d-flex flex-wrap justify-content-center">
+        <div 
+            class="col-12 col-md-3 col-lg-3 mt-1 mx-1" 
+            v-for="(project, index) in projects" 
+            :key="index"
+        >
             <div class="card h-100 bg-transparent border-dark mb-3" style="max-width: 20rem;">
-            <div class="card-body d-flex flex-column">
-                <h4 class="card-title">{{ project.title[currentLanguage] }}</h4>
-                <p class="card-text flex-grow-1">
-                    {{ project.description[currentLanguage] || 'No description provided.' }}
-                </p>
-                <p class="card-text"><small class="text-muted">{{ project.stacks }}</small></p>
+                <div class="card-body d-flex flex-column">
+                    <h4 class="card-title">{{ project.title[currentLanguage] }}</h4>
+                    <p class="card-text flex-grow-1">
+                        {{ project.description[currentLanguage] || 'No description provided.' }}
+                    </p>
+                    <p class="card-text"><small class="text-muted">{{ project.stacks }}</small></p>
                     <div class="row">
                         <div class="col">
                             <a 
@@ -58,7 +62,6 @@
         async mounted() {
             this.isLoading = true;
             this.projects = await $fetch('/api/projects')
-            console.log(this.projects)
             this.isLoading = false;
         },
         computed: {
