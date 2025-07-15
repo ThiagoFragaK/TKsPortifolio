@@ -26,5 +26,18 @@ export default defineEventHandler(() => {
             },
             repository: "https://github.com/ThiagoFragaK/TKsPortifolio",
         },
+        {
+            title: {
+                "en": "Invoicer",
+                "pt": "Invoicer",
+            },
+            stacks: "Vue3/Nuxt3",
+            url: "https://invoicer-blue.vercel.app/",
+            description: {
+                "en": "A small project that allows you to generate, view, and download invoices in PDF format directly from the browser.",
+                "pt": "Um pequeno projeto que permite gerar, visualizar e fazer o download de faturas no formato PDF diretamente do navegador.",
+            },
+            repository: "https://github.com/ThiagoFragaK/TKsPortifolio",
+        },
     ]
 });
